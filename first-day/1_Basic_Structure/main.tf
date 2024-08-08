@@ -66,7 +66,14 @@ provider "azurerm" {
     tenant_id       = "00000000-0000-0000-0000-000000000000" # I declare the tenant ID
 }
 
-resource "azurerm_resource_group" "rg" {
+# This is a resource block. It's used to define a resource in Terraform
+resource "azurerm_resource_group" "rg" { # This line specifies the resource type and the resource name. In this case, it's an Azure resource group. It begins with the provider name (azurerm) and the resource type (resource_group). The internal terraform resource name (rg) is specified after the resource type
     name     = "first-day-rg" # I'm a argument
     location = "westeurope"
+}
+
+# This is an output block. It's used to define the output of the configuration
+# You can use the output in other configurations or scripts
+output "resource_group_id" { # This line specifies the output name. In this case, it's the ID of the resource group
+    value = azurerm_resource_group.rg.id # This line specifies the value of the output. In this case, it's the ID of the resource group. Note that we're using the resource group resource here to get the ID
 }
