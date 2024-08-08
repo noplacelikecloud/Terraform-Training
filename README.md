@@ -47,10 +47,18 @@ git clone https://github.com/yourusername/terraform-training-repo.git
 cd terraform-training-repo
 ```
 
-### Step 3: Initialize Terraform
+### Step 3: Login to Azure
+You need to login to Azure with AzCLI and select your desired subscription:
+
+```sh
+az login
+az context set --subscription "whateveryouwant"
+```
+
+### Step 4: Initialize Terraform
 Navigate to the directory containing the Terraform configuration files and run:
 
-### Step 4: Plan and Apply Configuration
+### Step 5: Plan and Apply Configuration
 Plan the infrastructure changes:
 ```sh
 terraform plan
@@ -62,7 +70,7 @@ terraform apply
 ```
 
 
-### Step 5: Destroy Infrastructure
+### Step 6: Destroy Infrastructure
 To clean up and destroy the infrastructure created by Terraform, run:
 ```sh
 terraform destroy
