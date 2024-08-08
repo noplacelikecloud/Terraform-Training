@@ -58,6 +58,10 @@ az context set --subscription "whateveryouwant"
 ### Step 4: Initialize Terraform
 Navigate to the directory containing the Terraform configuration files and run:
 
+```sh
+terraform init
+```
+
 ### Step 5: Plan and Apply Configuration
 Plan the infrastructure changes:
 ```sh
