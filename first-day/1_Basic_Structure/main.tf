@@ -36,6 +36,7 @@ terraform {
   }
 
   # This block is for the backend configuration. It tells Terraform where to store the state file
+  # By default, Terraform stores the state file locally. But you can also use a remote backend like Azure Blob Storage, AWS S3, Google Cloud Storage, etc.
   # The state file is a file that contains the current state of your infrastructure
   # It'll be locked when you run Terraform commands to prevent conflicts
   backend "local" {
