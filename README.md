@@ -84,6 +84,7 @@ terraform destroy
 
 - [Terraform Language Documentation](https://developer.hashicorp.com/terraform/language)
 - [AzureRM Provider Documentation](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
+- [Terraform Docs](https://terraform-docs.io/)
 
 ## Contributing
 N/A
