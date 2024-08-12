@@ -80,6 +80,11 @@ To clean up and destroy the infrastructure created by Terraform, run:
 terraform destroy
 ```
 
+## Intresting Links:
+
+- [Terraform Language Documentation](https://developer.hashicorp.com/terraform/language)
+- [AzureRM Provider Documentation](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
+
 ## Contributing
 N/A
 

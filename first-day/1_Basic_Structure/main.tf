@@ -4,6 +4,7 @@
 # This is a Terraform configuration file
 # It's written in HashiCorp Configuration Language (HCL)
 
+# You can find the complete documentation of the Azure provider here: https://developer.hashicorp.com/terraform/language
 
 
 # This block is a Terraform block - it configures the parameter of Terraform for this project
