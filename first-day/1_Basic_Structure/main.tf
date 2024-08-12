@@ -17,7 +17,7 @@ terraform {
     # This block is for the Azure provider
     azurerm = {
       source  = "hashicorp/azurerm" # This line tells the provider where to get the plugin. In this case, it's the Terraform Registry (https://registry.terraform.io/)
-      version = "3.118.0"           # This line specifies the version of the plugin. You can use a specific version or a version constraint
+      version = "3.115.0"           # This line specifies the version of the plugin. You can use a specific version or a version constraint
       # version = "~> 3.0" # This line specifies a version constraint. In this case, it means that Terraform will use the latest version of the plugin that is compatible with version 3.0
       # version = ">= 3.0" # This line specifies a version constraint. In this case, it means that Terraform will use the latest version of the plugin that is greater than or equal to version 3.0
       # version = "< 3.0" # This line specifies a version constraint. In this case, it means that Terraform will use the latest version of the plugin that is less than version 3.0
@@ -30,8 +30,8 @@ terraform {
     }
 
     fortios = {
-      source  = "fortinet/fortios"
-      version = "0.1.0"
+      source  = "fortinetdev/fortios"
+      version = "1.20.0"
     }
   }
 

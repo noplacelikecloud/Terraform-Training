@@ -3,7 +3,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "3.118.0"
+      version = "3.115.0"
     }
 
     aws = {
@@ -13,7 +13,7 @@ terraform {
 
     fortios = {
       source  = "fortinet/fortios"
-      version = "0.1.0"
+      version = "1.20.0"
     }
   }
 
