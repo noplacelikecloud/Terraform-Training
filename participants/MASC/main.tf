@@ -70,7 +70,12 @@ resource "azurerm_linux_virtual_machine" "vm" {
     azurerm_network_interface.nic.id,
   ]
 
-#Can't generate SSH Key. Path must exist first. Depends on VM? Command does't work as with Data Block.
+#Can't generate SSH Key. Path must exist first. Depends on VM? Depends_on command does't work as with Data Block.
+#Generate SSH Key with dedicated resource block beforehand → work with output?
+
+#  admin_ssh_key {
+#    username   = "adminuser"
+#    public_key = file("~/.ssh/id_rsa.pub")
 
   os_disk {
     caching              = "ReadWrite"
