@@ -18,6 +18,7 @@ terraform {
     azurerm = {
       source  = "hashicorp/azurerm" # This line tells the provider where to get the plugin. In this case, it's the Terraform Registry (https://registry.terraform.io/)
       version = "3.115.0"           # This line specifies the version of the plugin. You can use a specific version or a version constraint
+      # This line specifies that no provider is required. This is useful when you want to use a provider that is not required by default
       # version = "~> 3.0" # This line specifies a version constraint. In this case, it means that Terraform will use the latest version of the plugin that is compatible with version 3.0
       # version = ">= 3.0" # This line specifies a version constraint. In this case, it means that Terraform will use the latest version of the plugin that is greater than or equal to version 3.0
       # version = "< 3.0" # This line specifies a version constraint. In this case, it means that Terraform will use the latest version of the plugin that is less than version 3.0
@@ -59,12 +60,7 @@ terraform {
 # It tells Terraform the configuration of the Azure provider - like authentication, etc.
 provider "azurerm" {
   features {}
-
-  # Here you can specify the authentication details for the Azure provider
-  subscription_id = "00000000-0000-0000-0000-000000000000" # I declare the subscription ID
-  client_id       = "00000000-0000-0000-0000-000000000000" # I declare the client ID
-  client_secret   = "00000000-0000-0000-0000-000000000000" # I declare the client secret
-  tenant_id       = "00000000-0000-0000-0000-000000000000" # I declare the tenant ID
+  skip_provider_registration = true
 }
 
 # This is a resource block. It's used to define a resource in Terraform

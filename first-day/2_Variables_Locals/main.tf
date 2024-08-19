@@ -43,6 +43,10 @@ variable "resource_group_name" {
 # This is the local block. It defines a local value that can be used within the configuration file. You can compare it with var in Azure Bicep.
 locals {
   location = "westeurope"
+  tags = {
+    environment = "dev"
+    cost_center = "it"
+  }
 }
 
 resource "azurerm_resource_group" "rg" {
