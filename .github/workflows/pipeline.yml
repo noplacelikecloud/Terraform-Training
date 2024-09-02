@@ -33,5 +33,5 @@ jobs:
         working-directory: ./_third_day/8-ci-cd
 
       - name: Deploy Terraform
-        run: terraform apply --var-file vars/test.my.tfvars --auto-approve tfplan
+        run: terraform apply --auto-approve tfplan
         working-directory: ./_third_day/8-ci-cd
