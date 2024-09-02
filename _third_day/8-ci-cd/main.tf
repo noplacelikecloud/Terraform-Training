@@ -52,7 +52,7 @@ resource "azurerm_resource_group" "rg" {
 
 resource "azurerm_virtual_network" "vnet" {
   name                = var.virtual_network_name
-  resource_group_name = var.resource_group_name
+  resource_group_name = azurerm_resource_group.rg.name
   location            = local.location
   address_space       = ["10.0.0.0/24"]
 
@@ -69,7 +69,7 @@ resource "azurerm_virtual_network" "vnet" {
 data "azurerm_subnet" "vm-subnet" {                        
   name                 = "vm-subnet"                       
   virtual_network_name = azurerm_virtual_network.vnet.name 
-  resource_group_name  = var.resource_group_name          
+  resource_group_name  = azurerm_resource_group.rg.name          
 
   depends_on = [azurerm_virtual_network.vnet]
 }
@@ -77,7 +77,7 @@ data "azurerm_subnet" "vm-subnet" {
 
 module "vm" {
   source = "./modules/vm"
-  resource_group_name = var.resource_group_name
+  resource_group_name = azurerm_resource_group.rg.name
   location            = local.location
   vm_name             = var.virutal_machine_name
   administrator_login = "localadmin"
