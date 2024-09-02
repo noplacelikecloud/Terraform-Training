@@ -1,0 +1,32 @@
+name: Terraform Deployment
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy-terraform-infra:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.7.5
+
+      - name: Initialize Terraform
+        run: terraform init
+        working-directory: ./_third_day/8-ci-cd
+
+      - name: Validate Terraform
+        run: terraform validate
+        working-directory: ./_third_day/8-ci-cd
+
+      - name: Plan Terraform
+        run: terraform plan -out=tfplan
+        working-directory: ./_third_day/8-ci-cd
+
+      - name: Deploy Terraform
+        run: terraform apply --auto-approve tfplan
+        working-directory: ./_third_day/8-ci-cd
