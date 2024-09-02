@@ -26,6 +26,12 @@ variable "storage_account_as_fileserver" {
   description = "If true, a storage account will be created to be used as a file server."
 }
 
+variable "storage_account_name" {
+  type        = string
+  description = "The name of the storage account."
+  
+}
+
 locals {
   location = "westeurope"
   tags = {
@@ -92,7 +98,7 @@ module "vm" {
 
 resource "azurerm_storage_account" "st-test" {
   count                    = var.storage_account_as_fileserver ? 1 : 0
-  name                     = "sttftestdeploymentbefl"
+  name                     = var.storage_account_name
   resource_group_name      = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
   account_tier             = "Standard"
